@@ -1,0 +1,267 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "fa_struct": {
+      "attributes": {
+        "top": "00000000000000000000000000000001"
+      },
+      "ports": {
+        "x": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "y": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "cin_i": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "sum_o": {
+          "direction": "output",
+          "bits": [ 5 ]
+        },
+        "cout_o": {
+          "direction": "output",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+        "\\14": {
+          "hide_name": 0,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 8 ],
+            "Y": [ 6 ]
+          }
+        },
+        "ha1": {
+          "hide_name": 0,
+          "type": "half_adder",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "c": "output",
+            "p": "input",
+            "q": "input",
+            "s": "output"
+          },
+          "connections": {
+            "c": [ 7 ],
+            "p": [ 2 ],
+            "q": [ 3 ],
+            "s": [ 9 ]
+          }
+        },
+        "ha2": {
+          "hide_name": 0,
+          "type": "half_adder",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "c": "output",
+            "p": "input",
+            "q": "input",
+            "s": "output"
+          },
+          "connections": {
+            "c": [ 8 ],
+            "p": [ 9 ],
+            "q": [ 4 ],
+            "s": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "c1": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+          }
+        },
+        "c2": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+          }
+        },
+        "cin_i": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+          }
+        },
+        "cout_o": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+          }
+        },
+        "ha1:2": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+          }
+        },
+        "ha1:3": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+          }
+        },
+        "ha2:8": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+          }
+        },
+        "ha2:9": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+          }
+        },
+        "s1": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+          }
+        },
+        "sum_o": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+          }
+        },
+        "x": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+          }
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        }
+      }
+    },
+    "half_adder": {
+      "attributes": {
+      },
+      "ports": {
+        "p": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "q": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "s": {
+          "direction": "output",
+          "bits": [ 4 ]
+        },
+        "c": {
+          "direction": "output",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "\\17": {
+          "hide_name": 0,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "Y": [ 4 ]
+          }
+        },
+        "\\18": {
+          "hide_name": 0,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "Y": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "c": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+          }
+        },
+        "p": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+          }
+        },
+        "q": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "s": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+          }
+        }
+      }
+    }
+  }
+}
